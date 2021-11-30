@@ -62,7 +62,7 @@ If you experienced 403 , please check the web server that running this PHP scrip
 | Sony Max | 1920x1080 25fps | Lifestyle & Knowledge | ✓ | International Feed |
 | Colors Cineplex | 1920x1080 25fps | Entertainment | ✓ | International Feed |
 | Dreamworks | 1920x1080 25fps | Kids | ✓ | International Feed |
-| Dunia Sinema | 1920x1080 25fps | Movies | ✓ | International Feed |
+| Dunia Sinema | 1920x1080 25fps | Movies | ✓ | unifi TV In-house Channel |
 | Rock Entertainment | 1920x1080 25fps | Movies | ✓ | International Feed |
 | Rock Extreme | 1920x1080 25fps | Movies | ✓ | International Feed |
 | CinemaWorld | 1920x1080 25fps | Movies | ✓ | International Feed |
