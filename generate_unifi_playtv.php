@@ -608,6 +608,326 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
+$data = '{"channelID":"51882374","mediaID":"51882384","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$sonygem= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="SGEM.id" tvg-id="SGEM.id" tvg-chno="SGEM.id" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210926/20210926024214242p95.png",Sony Gem HD
+'.$sonygem;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000090","mediaID":"38536178","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$sonymax= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Movies" tvg-id="331" tvg-chno="331" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716070246131li6.png",Sony Max
+'.$sonymax;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000038","mediaID":"38606713","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$cineplex= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Movies" tvg-id="333" tvg-chno="333" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/2019071607255101998u.png",Colors Cineplex
+'.$cineplex;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000103","mediaID":"38610254","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$dream= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Kids" tvg-id="550" tvg-chno="550" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/202011/20201125/202011250800095510sa.png",Dreamworks HD
+'.$dream;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000046","mediaID":"38729749","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$dunia= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Movies" tvg-id="CHN" tvg-chno="128" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716074123890vav.png",Dunia Sinema HD
+'.$dunia;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000029","mediaID":"38729829","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$rockent= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="473" tvg-id="473" tvg-chno="473" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163927011u1k.png",473 Rock Entertainment HD
+'.$rockent;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000081","mediaID":"38729863","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$rockex= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="474" tvg-id="474" tvg-chno="474" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163736941716.png",474 Rock Extreme HD
+'.$rockex;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000080","mediaID":"38610133","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$cinemaworld= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Movies" tvg-id="411" tvg-chno="411" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716065916134bcf.png",CinemaWorld HD
+'.$cinemaworld;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000088","mediaID":"38610307","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$travel= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Lifestyle & Knowledge" tvg-id="521" tvg-chno="521" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716073823792x3y.png",Travel Channel HD
+'.$travel;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"52014533","mediaID":"52014543","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$tech= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Lifestyle & Knowledge" ch-number="505" tvg-id="505" tvg-chno="505" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202110/20211002/20211002055719651qa7.png",505 Tech Storm HD
+'.$tech;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
 $data = '{"channelID":"51882317","mediaID":"51882327","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
