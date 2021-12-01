@@ -47,6 +47,8 @@ If you experienced 403 , please check the web server that running this PHP scrip
 | DidikTV KPM | 1024x576 25fps | Malaysian Variety | Downscaled from HD feed - HD available on MYTV Broadcasting and Tonton | Previously NTV7 |
 | 8TV | 1024x576 25fps | Chinese Variety | Downscaled from HD feed - HD available on MYTV Broadcasting and Tonton | | 八度空间 |
 | TV9 | 1024x576 25fps | Malaysian Variety | Downscaled from HD feed - HD available on MYTV Broadcasting and Tonton | HD available on MYTV Broadcasting |
+| Hypp Sensasi | 1920x1080 25fps | Malaysian Variety | ✓ | unifi TV In-house Channel |
+| Hypp Inspirasi | 1920x1080 25fps | Malaysian Variety | ✓ | unifi TV In-house Channel |
 | Salam HD | 1920x1080 25fps | Malaysian Variety | ✓ | unifi TV In-house Channel |
 | TV AlHijrah | 1024x576 25fps | Malaysian Variety | Downscaled from HD feed / HD available on MYTV Broadcasting |
 | Laku Mall | 1920x1080 25fps | Malaysian Variety | ✓ | unifi TV In-house Channel |
