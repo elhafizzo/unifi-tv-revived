@@ -2,7 +2,7 @@
 /**
 Script by @samleong123.
 Special thanks to @weareblahs.
-Edited by elhafizzo
+Edited by @elhafizzo
 Revived unifiPlayTV!
  **/
 $userid = "YOUR_USER_NAME"; /**Put ur registered phone number with unifiPlayTV start with 0**/
