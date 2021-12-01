@@ -295,14 +295,14 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 $result = json_decode($resp, true);
-$inspirasi= $result["playURL"];
+$inspira= $result["playURL"];
 echo '
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="118" tvg-id="118" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/201907/20190716/20190716071701239brh.png",Hypp Inspirasi HD
-'.$inspirasi;
+'.$inspira;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -945,7 +945,7 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Lifestyle & Knowledge" tvg-id="521" tvg-chno="521" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716073823792x3y.png",Travel Channel HD
+#EXTINF:-1 group-title="Lifestyle & Knowledge" tvg-id="521" tvg-chno="521" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202108/20210831/20210831161520835mdk.png",Travel Channel HD
 '.$travel;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
