@@ -2,11 +2,12 @@
 /**
 Script by @samleong123.
 Special thanks to @weareblahs.
+Edited by elhafizzo
 Revived unifiPlayTV!
  **/
-$userid = "YOUR_USER_NAME"; /**Put ur registered phone number with unifiPlayTV start with 0**/
-$password = "YOUR_PASSWORD";/**Put ur unifiPlayTV password**/
-$physicaldeviceid = "YOUR_PHYSICAL_DEVICE_ID";/** Retrieve physicalDeviceID from F12 Network when login to playtv.unifi.com.my**/
+$userid = "nalathamby2020@iptv"; /**Put ur registered phone number with unifiPlayTV start with 0**/
+$password = "UNIFI1234";/**Put ur unifiPlayTV password**/
+$physicaldeviceid = "4095296692";/** Retrieve physicalDeviceID from F12 Network when login to playtv.unifi.com.my**/
 
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/Authenticate";
@@ -240,6 +241,70 @@ echo '
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="109" tvg-id="109" tvg-chno="109" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/2019071607262664255l.png",TV9
 '.$tv9;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000089","mediaID":"38675409","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$sensasi= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Malaysian Variety" ch-number="116" tvg-id="116" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/201907/20190716/201907160646463946q7.png",Hypp Sensasi HD
+'.$sensasi;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"channelID":"20000003","mediaID":"38683387","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$result = json_decode($resp, true);
+$inspirasi= $result["playURL"];
+echo '
+
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
+.'
+#EXTINF:-1 group-title="Malaysian Variety" ch-number="118" tvg-id="118" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/201907/20190716/20190716071701239brh.png",Hypp Inspirasi HD
+'.$inspirasi;
+   
+   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
