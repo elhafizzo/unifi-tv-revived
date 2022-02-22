@@ -61,7 +61,6 @@ If you experienced 403 , please check the web server that running this PHP scrip
 | unifi Sports 4 | 1920x1080 25fps | Sports | ✓ | unifi TV In-house Channel |
 | unifi Sports 5 | 1920x1080 25fps | Sports | ✓ | unifi TV In-house Channel |
 | Sony Gem | 1920x1080 25fps | Entertainment| ✓ | International Feed |
-| Sony Max | 1920x1080 25fps | Lifestyle & Knowledge | ✓ | International Feed |
 | Colors Cineplex | 1920x1080 25fps | Entertainment | ✓ | International Feed |
 | Dreamworks | 1920x1080 25fps | Kids | ✓ | International Feed |
 | Dunia Sinema | 1920x1080 25fps | Movies | ✓ | unifi TV In-house Channel |
