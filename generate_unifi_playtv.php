@@ -52,10 +52,10 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
    "Content-Type: application/json",
    "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
-);
+);  
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = '{"channelID":"20000009","mediaID":"44534208","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+$data = '{"channelID":"41232791","mediaID":"441232801","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -67,15 +67,14 @@ $resp = curl_exec($curl);
 curl_close($curl);
 $result = json_decode($resp, true);
 $tv1 = $result["playURL"];
-echo '#EXTM3U x-tvg-url="https://weareblahs.github.io/epg/unifitv.xml" url-tvg="https://weareblahs.github.io/epg/unifitv.xml" refresh="1440" max-conn="1" refresh="24"';
 echo '
 
-#EXTM3U
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Malaysian Variety" ch-number="101" tvg-id="101" tvg-chno="101" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/20190708071026467w2e.png",TV1
-'.$tv1;
+#EXTINF:-1 group-title="Malaysian Variety" ch-number="101" tvg-id="101" tvg-chno="101" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202002/20200228/20200228032126911a3z.png",TV1
+'
+.$tv1;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -86,7 +85,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $headers = array(
    "Content-Type: application/json",
-   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
+   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"    
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
@@ -108,7 +107,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="102" tvg-id="102" tvg-chno="102" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/20190708070724242ygr.png",TV2
-'.$tv2;
+'
+.$tv2;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -141,7 +141,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="103" tvg-id="103" tvg-chno="103" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/202007/20200701/202007010436159112u3.png",TV3
-'.$tv3;
+'
+.$tv3;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -174,7 +175,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="107" tvg-id="107" tvg-chno="107" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/202102/20210223/20210223181442797931.png",DidikTV KPM
-'.$didiktv;
+'
+.$didiktv;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -207,7 +209,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Chinese Variety" ch-number="108" tvg-id="108" tvg-chno="108" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/20190708074041526yld.png",8TV
-'.$tv8;
+'
+.$tv8;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -239,7 +242,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="109" tvg-id="109" tvg-chno="109" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/2019071607262664255l.png",TV9
-'.$tv9;
+'
+.$tv9;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -270,7 +274,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="116" tvg-id="116" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/201907/20190716/201907160646463946q7.png",Hypp Sensasi HD
-'.$sensasi;
+'
+.$sensasi;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -302,7 +307,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="118" tvg-id="118" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/201907/20190716/20190716071701239brh.png",Hypp Inspirasi HD
-'.$inspira;
+'
+.$inspira;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -335,7 +341,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="113" tvg-id="113" tvg-chno="113" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716062504007e6f.png",Salam HD
-'.$salam;
+'
+.$salam;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -368,7 +375,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="114" tvg-id="114" tvg-chno="114" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716072749378meg.png",TV Alhijrah
-'.$AlHijrah;
+'
+.$AlHijrah;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -400,7 +408,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Malaysian Variety" ch-number="151" tvg-id="151" tvg-chno="151" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/2019071607335626707k.png",Laku Mall HD
-'.$Laku;
+'
+.$Laku;
 
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
@@ -434,7 +443,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="News" ch-number="633" tvg-id="633" tvg-chno="633" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716073249333u7e.png",Parlimen Malaysia
-'.$parlimen;
+'
+.$parlimen;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -466,7 +476,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="News" ch-number="643" tvg-id="643" tvg-chno="643" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/201907160704507932rh.png",NHK WORLD-JAPAN
-'.$nhk;
+'
+.$nhk;
 
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -499,7 +510,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="News" ch-number="611" tvg-id="611" tvg-chno="611" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/201907080719495046uu.png",Channel NewsAsia
-'.$cna;
+'
+.$cna;
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -513,7 +525,7 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = '{"channelID":"52027474","mediaID":"52027484","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+$data = '{"channelID":"54185493","mediaID":"54185503","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -530,8 +542,10 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Sports" ch-number="701" tvg-id="701" tvg-chno="701" tvg-logo="https://playtv.unifi.com.my:7053/CPS/images/universal/film/logo/202108/20210811/2021081116172640657u.png",unifi Sports 1 HD
-'.$unifisports1;
+#EXTINF:-1 group-title="Sports" ch-number="701" tvg-id="701" tvg-chno="701" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202202/20220220/20220220163044631gzk.png",unifi Sports 1 HD
+'
+.$unifisports1;
+
 $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
@@ -562,9 +576,11 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Sports" ch-number="702" tvg-id="702" tvg-chno="702" tvg-logo="https://playtv.unifi.com.my:7053/CPS/images/universal/film/logo/202108/20210811/20210811161847362lc0.png",unifi Sports 2 HD
-'.$unifisports2;
-$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+#EXTINF:-1 group-title="Sports" ch-number="702" tvg-id="702" tvg-chno="702" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202202/20220220/202202201646255845yc.png",unifi Sports 2 HD
+'
+.$unifisports2;
+
+	$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -594,9 +610,11 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Sports" ch-number="703" tvg-id="703" tvg-chno="703" tvg-logo="https://playtv.unifi.com.my:7053/CPS/images/universal/film/logo/202108/20210811/20210811162003633ulc.png",unifi Sports 3 HD
-'.$unifisports3;
-$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+#EXTINF:-1 group-title="Sports" ch-number="703" tvg-id="703" tvg-chno="703" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202202/20220220/20220220164714549gjp.png",unifi Sports 3 HD
+'
+.$unifisports3;
+
+	$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -609,7 +627,7 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = '{"channelID":"52027492","mediaID":"52027502","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
+$data = '{"channelID":"54199255","mediaID":"54199265","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -626,9 +644,11 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Sports" ch-number="704" tvg-id="704" tvg-chno="704" tvg-logo="https://playtv.unifi.com.my:7053/CPS/images/universal/film/logo/202108/20210811/20210811162111899up2.png",unifi Sports 4 HD
-'.$unifisports4;
-$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
+#EXTINF:-1 group-title="Sports" ch-number="704" tvg-id="704" tvg-chno="704" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202202/20220220/20220220164819629xdk.png",unifi Sports 4 HD
+'
+.$unifisports4;
+
+	$url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -657,8 +677,9 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Sports" ch-number="705" tvg-id="705" tvg-chno="705" tvg-logo="https://playtv.unifi.com.my:7053/CPS/images/universal/film/logo/202108/20210811/20210811162210893gcu.png",unifi Sports 5 HD
-'.$unifisports5;
+#EXTINF:-1 group-title="Sports" ch-number="705" tvg-id="705" tvg-chno="705" tvg-logo="https://playtv.unifi.com.my:7047/CPS/images/universal/film/logo/202202/20220220/202202201649298115g7.png",unifi Sports 5 HD
+'
+.$unifisports5;
 
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -689,40 +710,9 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="SGEM.id" tvg-id="SGEM.id" tvg-chno="SGEM.id" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210926/20210926024214242p95.png",Sony Gem HD
-'.$sonygem;
-   
-   $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
-
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-$headers = array(
-   "Content-Type: application/json",
-   "Cookie: JSESSIONID=$jsession; CSESSIONID=$csession; USER_ID=$userid;"
-);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-$data = '{"channelID":"20000090","mediaID":"38536178","businessType":"BTV","isReturnProduct":"1","isHTTPS":"1","checkLock":{"checkType":"0"}}';
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-//for debug only!
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-$resp = curl_exec($curl);
-curl_close($curl);
-$result = json_decode($resp, true);
-$sonymax= $result["playURL"];
-echo '
-
-#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
-.'
-#EXTINF:-1 group-title="Movies" tvg-id="331" tvg-chno="331" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716070246131li6.png",Sony Max
-'.$sonymax;
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="SGEM.id" tvg-id="SGEM.id" tvg-chno="SGEM.id" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210926/20210926024214242p95.png",Gem TV
+'
+.$sonygem;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -754,7 +744,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Movies" tvg-id="333" tvg-chno="333" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/2019071607255101998u.png",Colors Cineplex
-'.$cineplex;
+'
+.$cineplex;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -786,7 +777,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Kids" tvg-id="550" tvg-chno="550" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/202011/20201125/202011250800095510sa.png",Dreamworks HD
-'.$dream;
+'
+.$dream;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -818,7 +810,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Movies" tvg-id="CHN" tvg-chno="128" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716074123890vav.png",Dunia Sinema HD
-'.$dunia;
+'
+.$dunia;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -849,8 +842,9 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="473" tvg-id="473" tvg-chno="473" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163927011u1k.png",473 Rock Entertainment HD
-'.$rockent;
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="473" tvg-id="473" tvg-chno="473" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163927011u1k.png",Rock Entertainment HD
+'
+.$rockent;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -881,8 +875,9 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="474" tvg-id="474" tvg-chno="474" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163736941716.png",474 Rock Extreme HD
-'.$rockex;
+#EXTINF:-1 group-title="ENTERTAINMENT" ch-number="474" tvg-id="474" tvg-chno="474" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202109/20210902/20210902163736941716.png",Rock Extreme HD
+'
+.$rockex;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -914,7 +909,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Movies" tvg-id="411" tvg-chno="411" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190716/20190716065916134bcf.png",CinemaWorld HD
-'.$cinemaworld;
+'
+.$cinemaworld;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -946,7 +942,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Lifestyle & Knowledge" tvg-id="521" tvg-chno="521" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202108/20210831/20210831161520835mdk.png",Travel Channel HD
-'.$travel;
+'
+.$travel;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -977,8 +974,9 @@ echo '
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
-#EXTINF:-1 group-title="Lifestyle & Knowledge" ch-number="505" tvg-id="505" tvg-chno="505" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202110/20211002/20211002055719651qa7.png",505 Tech Storm HD
-'.$tech;
+#EXTINF:-1 group-title="Lifestyle & Knowledge" ch-number="505" tvg-id="505" tvg-chno="505" tvg-logo="https://playtv.unifi.com.my:7044/CPS/images/universal/film/logo/202110/20211002/20211002055719651qa7.png",Tech Storm HD
+'
+.$tech;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -1010,7 +1008,8 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Chinese Variety" ch-number="1000" tvg-id="1000" tvg-chno="1000" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/202109/20210926/20210926030715748ltd.png",Celestial Movies HD
-'.$cm;
+'
+.$cm;
    
    $url = "https://playtv.unifi.com.my:7041/VSP/V3/PlayChannel";
 
@@ -1042,6 +1041,7 @@ echo '
 #KODIPROP:inputstream.adaptive.license_key=https://ottweb.hypp.tv:8064?deviceId='.$vuid
 .'
 #EXTINF:-1 group-title="Lifestyle & Knowledge" ch-number="529" tvg-id="529" tvg-chno="529" tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/20190708075136521klp.png",Luxe.TV HD
-'.$luxe;
+'
+.$luxe;
 }
 ?>
